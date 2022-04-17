@@ -1,6 +1,5 @@
 package com.company;
 
-import java.sql.Array;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -65,13 +64,65 @@ public class BinaryTree {
 
     /*
     Keep shifting left until null child
- */
+     */
     public Node getLargestInt(Node selectedNode) {
         if (selectedNode.rChild == null) {
             return selectedNode;
         }
 
         return getLargestInt(selectedNode.rChild);
+    }
+
+    public void traverseInOrder(Node currentNode) {
+        if (currentNode == null) {
+            return;
+        }
+
+        traverseInOrder(currentNode.lChild);
+
+        System.out.println(currentNode.getValue());
+
+        traverseInOrder(currentNode.rChild);
+    }
+
+    public void traversePreOrder(Node currentNode) {
+        if (currentNode == null) {
+            return;
+        }
+
+        System.out.println(currentNode.getValue());
+
+        traversePreOrder(currentNode.lChild);
+        traversePreOrder(currentNode.rChild);
+    }
+
+    public void traversePostOrder(Node currentNode) {
+        if (currentNode == null) {
+            return;
+        }
+
+        traversePostOrder(currentNode.lChild);
+        traversePostOrder(currentNode.rChild);
+
+        System.out.println(currentNode.getValue());
+    }
+
+    public boolean searchDepth(Node currentNode, int value) {
+        if (currentNode == null) {
+            return false;
+        }
+
+        if (currentNode.getValue() == value) {
+            return true;
+        }
+
+        traverseInOrder(currentNode.lChild);
+
+        System.out.println(currentNode.getValue());
+
+        traverseInOrder(currentNode.rChild);
+
+        return false;
     }
 
     /*

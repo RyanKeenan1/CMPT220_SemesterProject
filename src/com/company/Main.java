@@ -17,8 +17,6 @@ public class Main {
         binaryTree.addValue(-1);
 
 
-        System.out.println(binaryTree.printSortedListOfInts().toString());
-        binaryTree.deleteValueFromTree(binaryTree.root, 5);
-        System.out.println(binaryTree.printSortedListOfInts().toString());
+        // You can add any test functions below:
     }
 }
