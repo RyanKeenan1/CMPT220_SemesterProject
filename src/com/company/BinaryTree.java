@@ -42,6 +42,8 @@ public class BinaryTree {
 
     /*
         Recursively check and shift left or right depending on what has another child until null is reached
+
+        https://stackoverflow.com/questions/41629247/maximum-height-of-a-binary-tree
      */
     public int getTreeHeight(Node selectedNode) {
         if (selectedNode == null) {
@@ -63,7 +65,7 @@ public class BinaryTree {
     }
 
     /*
-    Keep shifting left until null child
+        Keep shifting left until null child
      */
     public Node getLargestInt(Node selectedNode) {
         if (selectedNode.rChild == null) {
