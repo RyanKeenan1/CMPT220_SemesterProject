@@ -129,8 +129,7 @@ public class BinaryTree {
 
     /*
         Recursively searches through binary tree, puts all values into an arraylist, then sorts from least to greatest
-     */
-    public ArrayList<Integer> getSortedListOfInts(Node selectedNode, ArrayList<Integer> currentList) {
+     */    public ArrayList<Integer> getSortedListOfInts(Node selectedNode, ArrayList<Integer> currentList) {
         if (selectedNode.lChild != null) {
             currentList.add(selectedNode.lChild.getValue());
             currentList = getSortedListOfInts(selectedNode.lChild, currentList);
@@ -146,6 +145,7 @@ public class BinaryTree {
 
         return currentList;
     }
+
 
     public Node getSmallestIntFromTree() {
         ArrayList<Integer> startingList = new ArrayList<>();
